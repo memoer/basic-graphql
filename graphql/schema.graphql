@@ -1,0 +1,21 @@
+type Movie {
+  id: Int!
+  title: String!
+  rating: Float!
+  summary: String!
+  language: String!
+}
+type People {
+  id: Int!
+  name: String!
+  age: Int!
+  gender: String!
+}
+type Query {
+  people: [People]!
+  peopleById(id: Int!): People
+  movies(limit: Int, rating: Int): [Movie]!
+}
+type Mutation {
+  addPeople(name: String!, age: Int!, gender: String!): People!
+}
